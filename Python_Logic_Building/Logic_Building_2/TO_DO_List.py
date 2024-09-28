@@ -24,13 +24,19 @@ def mark_done():
         print("No task to mark as done")
     else:
         view_tasks()
-        task_number = int(input("Enter task number to mark as done "))-1
-        if 0<= task_number <len(tasks):
-            del tasks[task_number]
-            print("Task Marked as done")
-        else:
-            print("Invalid task number")
-
+        while True:
+            try:
+                task_number = int(input("Enter task number to mark as done "))-1
+                if 0<= task_number <len(tasks):
+                    confirm = input("Are you sure you want to mark this task as done (y/n) ")
+                    if confirm.lower() == "y":
+                        del tasks[task_number]
+                        print("Task Marked as done")
+                        break
+                    else:
+                        print("Invalid task number")
+            except ValueError:
+                    print("Invalid input. Please enter a number.")
 
 while True:
     print("\nTo-Do List")
