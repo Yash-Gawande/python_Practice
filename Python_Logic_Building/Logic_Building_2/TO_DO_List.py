@@ -24,9 +24,9 @@ def mark_done():
         print("No task to mark as done")
     else:
         view_tasks()
-        index = int(input("Enter task number to mark as done "))-1
-        if 0<= index <len(tasks):
-            del tasks[index]
+        task_number = int(input("Enter task number to mark as done "))-1
+        if 0<= task_number <len(tasks):
+            del tasks[task_number]
             print("Task Marked as done")
         else:
             print("Invalid task number")
