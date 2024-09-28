@@ -18,6 +18,8 @@ C: 70-79
 D: 60-69
 F: below 60
 """
+print()
+
 if 90<= average_score <= 100:
     print(f"Hey! Congrulations {name} you`ve Got the A Grade")
 
